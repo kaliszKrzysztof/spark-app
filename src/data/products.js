@@ -2,12 +2,13 @@ const data = [
   {
     id: '1',
     brand_name: 'KIOMI',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['rubberized navy', 'black', 'brown', 'silver'],
     variants: [{
       id: '1-1',
       name: ' Sunglasses - rubberized navy',
       color: 'rubberized navy',
-      img: 'https://i.imgur.com/iL1yVZo.jpg',
+      img: 'https://i.imgur.com/rTcISHZ.jpg',
       price: '69,00'
     }, {
       id: '1-2',
@@ -31,7 +32,8 @@ const data = [
   }, {
     id: '2',
     brand_name: 'KIOMI',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['black', 'brown', 'brown', 'silver'],
     variants: [{
       id: '2-1',
       name: ' Sunglasses - black',
@@ -60,7 +62,8 @@ const data = [
   }, {
     id: '3',
     brand_name: 'YOURTURN',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['black', 'brown', 'light brown', 'dark green'],
     variants: [{
       id: '3-1',
       name: ' Sunglasses - black',
@@ -89,7 +92,8 @@ const data = [
   }, {
     id: '4',
     brand_name: 'Timberland',
-    shape: 'Prostokątne',
+    shape: 'Rectangle',
+    colors: ['crystal', 'matte red', 'black', 'scarlet'],
     variants: [{
       id: '4-1',
       name: ' Sunglasses - crystal',
@@ -118,7 +122,8 @@ const data = [
   }, {
     id: '5',
     brand_name: 'Carhartt WIP',
-    shape: 'Owalne',
+    shape: 'Round',
+    colors: ['black', 'silver', 'brown', 'blue'],
     variants: [{
       id: '5-1',
       name: ' Sunglasses - black',
@@ -127,8 +132,8 @@ const data = [
       price: '72,00',
     }, {
       id: '5-2',
-      name: ' Sunglasses - silver coloured',
-      color: 'silver coloured',
+      name: ' Sunglasses - silver',
+      color: 'silver',
       img: 'https://i.imgur.com/GuoEeqq.jpg',
       price: '50,00',
     }, {
@@ -147,7 +152,8 @@ const data = [
   }, {
     id: '6',
     brand_name: 'Diesel',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['grey', 'crystal', 'light green', 'shiny beige'],
     variants: [{
       id: '6-1',
       name: ' Sunglasses - grey',
@@ -176,7 +182,8 @@ const data = [
   }, {
     id: '7',
     brand_name: 'YOURTURN',
-    shape: 'Trapez',
+    shape: 'Round',
+    colors: ['brown', 'black', 'dark green', 'light brown'],
     variants: [{
       id: '7-1',
       name: ' Sunglasses - brown',
@@ -205,7 +212,8 @@ const data = [
   }, {
     id: '8',
     brand_name: 'KIOMI',
-    shape: 'Owalne',
+    shape: 'Round',
+    colors: ['brown', 'black', 'blue', 'dark blue'],
     variants: [{
       id: '8-1',
       name: ' Sunglasses - brown',
@@ -234,7 +242,8 @@ const data = [
   }, {
     id: '9',
     brand_name: 'Nike Vision',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['mate black', 'grey', 'khaki', 'blue'],
     variants: [{
       id: '9-1',
       name: 'Sunglasses - mate black',
@@ -265,7 +274,8 @@ const data = [
   {
     id: '10',
     brand_name: 'Timberland',
-    shape: 'Prostokątne',
+    shape: 'Rectangle',
+    colors: ['white', 'blue', 'dark green', 'black'],
     variants: [{
       id: '10-1',
       name: 'Sunglasses - white',
@@ -294,7 +304,8 @@ const data = [
   }, {
     id: '11',
     brand_name: 'Lacoste',
-    shape: 'Trapez',
+    shape: 'Square',
+    colors: ['shiny black', 'mate green', 'blue', 'purple'],
     variants: [{
       id: '11-1',
       name: ' Sunglasses - shiny black',

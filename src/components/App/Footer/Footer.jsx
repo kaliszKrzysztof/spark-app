@@ -67,7 +67,11 @@ const FooterElement = ({ element, classes }) => (
       {element.label}
     </Typography>
     <nav className={classes.nav}>
-      {element.links.map(link => <Link key={link.label} className={classes.link} to={link.url}>{link.label}</Link>)}
+      {element.links.map(link => (
+        <Link key={link.label} className={classes.link} to={link.url}>
+          <Typography color="inherit">{link.label}</Typography>
+        </Link>))
+      }
     </nav>
   </Grid>
 );

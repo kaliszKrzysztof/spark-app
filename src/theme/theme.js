@@ -15,5 +15,14 @@ export default createMuiTheme({
     blue,
     orange,
     turquoise
-  }
+  },
+  typography: {
+    fontFamily: [
+      'Oswald',
+      'Roboto',
+      '"Helvetica Neue"',
+      'Arial',
+      'sans-serif'
+    ].join(','),
+  },
 });

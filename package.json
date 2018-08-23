@@ -2,9 +2,10 @@
   "name": "spark-app",
   "version": "0.1.0",
   "private": true,
-  "homepage" : "https://kaliszkrzysztof.github.io/spark-app/",
+  "homepage": "https://kaliszkrzysztof.github.io/spark-app/",
   "dependencies": {
     "@material-ui/core": "^1.5.0",
+    "classnames": "^2.2.6",
     "lodash": "^4.17.10",
     "react": "^16.4.2",
     "react-dom": "^16.4.2",
@@ -16,7 +17,8 @@
     "redux": "^4.0.0",
     "redux-logger": "^3.0.6",
     "redux-thunk": "^2.3.0",
-    "reselect": "^3.0.1"
+    "reselect": "^3.0.1",
+    "typeface-oswald": "0.0.54"
   },
   "devDependencies": {
     "eslint": "^4.19.1",
@@ -25,7 +27,8 @@
     "eslint-plugin-import": "^2.13.0",
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
-    "gh-pages": "^1.2.0"
+    "gh-pages": "^1.2.0",
+    "ghspa": "^1.0.0"
   },
   "scripts": {
     "start": "react-scripts start",

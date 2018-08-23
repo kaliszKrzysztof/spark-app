@@ -11,8 +11,6 @@ import styles from '../../components/App/App.styles';
 import Cart from '../Cart';
 import { startFetchProducts } from '../../actions/products';
 
-console.log(process.env);
-
 export const AppContainer = ({ store, ...rest }) => (
   <Provider store={store}>
     <MuiThemeProvider theme={theme}>
@@ -30,9 +28,6 @@ export const AppContainer = ({ store, ...rest }) => (
   </Provider>
 );
 
-
-const mapStateToProps = state => ({});
-
 const mapDispatchToProps = dispatch => bindActionCreators({ startFetchProducts }, dispatch);
 AppContainer.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
@@ -40,5 +35,5 @@ AppContainer.propTypes = {
 };
 
 export default withStyles(styles)(
-  connect(mapStateToProps, mapDispatchToProps)(AppContainer)
+  connect(null, mapDispatchToProps)(AppContainer)
 );
