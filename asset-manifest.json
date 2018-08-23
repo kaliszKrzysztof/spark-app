@@ -1,8 +1,8 @@
 {
-  "main.css": "static/css/main.65027555.css",
-  "main.css.map": "static/css/main.65027555.css.map",
-  "main.js": "static/js/main.2ee01765.js",
-  "main.js.map": "static/js/main.2ee01765.js.map",
+  "main.css": "static/css/main.52032099.css",
+  "main.css.map": "static/css/main.52032099.css.map",
+  "main.js": "static/js/main.d8d5d49f.js",
+  "main.js.map": "static/js/main.d8d5d49f.js.map",
   "static\\media\\1_1-2.JPG": "static/media/1_1-2.fc1fd74e.JPG",
   "static\\media\\1_1-3.JPG": "static/media/1_1-3.60ea4e8c.JPG",
   "static\\media\\2_2-1.JPG": "static/media/2_2-1.bd266ce4.JPG",
@@ -21,5 +21,17 @@
   "static\\media\\5_5-2.JPG": "static/media/5_5-2.68d1e750.JPG",
   "static\\media\\5_5-3.JPG": "static/media/5_5-3.e5552b76.JPG",
   "static\\media\\5_5-4.JPG": "static/media/5_5-4.e58bfad1.JPG",
-  "static\\media\\6_6-1.JPG": "static/media/6_6-1.935a0484.JPG"
+  "static\\media\\6_6-1.JPG": "static/media/6_6-1.935a0484.JPG",
+  "static\\media\\oswald-latin-200.woff": "static/media/oswald-latin-200.74b03550.woff",
+  "static\\media\\oswald-latin-200.woff2": "static/media/oswald-latin-200.7de4e8c7.woff2",
+  "static\\media\\oswald-latin-300.woff": "static/media/oswald-latin-300.d2c191b2.woff",
+  "static\\media\\oswald-latin-300.woff2": "static/media/oswald-latin-300.dc15f3b0.woff2",
+  "static\\media\\oswald-latin-400.woff": "static/media/oswald-latin-400.ca70f49a.woff",
+  "static\\media\\oswald-latin-400.woff2": "static/media/oswald-latin-400.f15aa285.woff2",
+  "static\\media\\oswald-latin-500.woff": "static/media/oswald-latin-500.deebf8fc.woff",
+  "static\\media\\oswald-latin-500.woff2": "static/media/oswald-latin-500.541a8639.woff2",
+  "static\\media\\oswald-latin-600.woff": "static/media/oswald-latin-600.452513e2.woff",
+  "static\\media\\oswald-latin-600.woff2": "static/media/oswald-latin-600.b81a3735.woff2",
+  "static\\media\\oswald-latin-700.woff": "static/media/oswald-latin-700.7eb521f1.woff",
+  "static\\media\\oswald-latin-700.woff2": "static/media/oswald-latin-700.3e941c0d.woff2"
 }
