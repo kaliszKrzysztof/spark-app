@@ -41,8 +41,12 @@ Header.propTypes = {
   classes: PropTypes.shape({
     appBar: PropTypes.string.isRequired,
     toolbar: PropTypes.string.isRequired,
+    logo: PropTypes.string.isRequired,
+    logoImg: PropTypes.string.isRequired,
     habmurgerButton: PropTypes.string.isRequired,
-  }).isRequired
+    menu: PropTypes.string.isRequired,
+  }).isRequired,
+  openMenu: PropTypes.func.isRequired
 };
 
 export default Header;

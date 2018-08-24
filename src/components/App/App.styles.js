@@ -16,7 +16,6 @@ const styles = theme => ({
   },
   app: {},
   mainContent: {
-    // paddingLeft: theme.spacing.unit * 3,
     padding: theme.spacing.unit * 3,
   }
 });

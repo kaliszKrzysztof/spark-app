@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { NavLink } from 'react-router-dom';
 import Typography from '@material-ui/core/Typography';
 import Button from '@material-ui/core/Button';
@@ -38,5 +39,17 @@ const Menu = ({ openCart, classes }) => (
     </Button>
   </div>
 );
+
+Menu.propTypes = {
+  classes: PropTypes.shape({
+    root: PropTypes.string.isRequired,
+    menuButton: PropTypes.string.isRequired,
+    navLink: PropTypes.string.isRequired,
+    navLinkCaption: PropTypes.string.isRequired,
+    navLinkIcon: PropTypes.string.isRequired,
+    navLinkActive: PropTypes.string.isRequired,
+  }).isRequired,
+  openCart: PropTypes.func.isRequired
+};
 
 export default Menu;

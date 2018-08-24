@@ -21,6 +21,8 @@
     "typeface-oswald": "0.0.54"
   },
   "devDependencies": {
+    "enzyme": "^3.4.4",
+    "enzyme-adapter-react-16": "^1.2.0",
     "eslint": "^4.19.1",
     "eslint-config-airbnb": "^17.0.0",
     "eslint-import-resolver-webpack": "^0.10.1",
@@ -28,7 +30,9 @@
     "eslint-plugin-jsx-a11y": "^6.1.1",
     "eslint-plugin-react": "^7.10.0",
     "gh-pages": "^1.2.0",
-    "ghspa": "^1.0.0"
+    "ghspa": "^1.0.0",
+    "react-test-renderer": "^16.4.2",
+    "redux-mock-store": "^1.5.3"
   },
   "scripts": {
     "start": "react-scripts start",

@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import { Link } from 'react-router-dom';
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
@@ -90,5 +91,13 @@ const Footer = ({
     </Grid>
   </footer>
 );
+
+Footer.propTypes = {
+  classes: PropTypes.shape({
+    root: PropTypes.string.isRequired,
+    caption: PropTypes.string.isRequired,
+    copyright: PropTypes.string.isRequired
+  }).isRequired
+};
 
 export default Footer;
