@@ -8,6 +8,7 @@ import theme from '../../theme';
 import MainContent from '../Routes/MainContent';
 import App from '../../components/App';
 import styles from '../../components/App/App.styles';
+import MenuDrawer from './MenuDrawer';
 import Cart from '../Cart';
 import { startFetchProducts } from '../../actions/products';
 
@@ -18,7 +19,8 @@ export const AppContainer = ({ store, ...rest }) => (
         <App
           {...rest}
           dialogChildren={[
-            <Cart key="cart" />
+            <Cart key="cart" />,
+            <MenuDrawer key="menu" />
           ]}
         >
           <MainContent />

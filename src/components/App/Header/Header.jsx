@@ -1,18 +1,16 @@
 import React from 'react';
-import { Link, NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import AppBar from '@material-ui/core/AppBar';
 import Toolbar from '@material-ui/core/Toolbar';
-import Typography from '@material-ui/core/Typography';
-import Button from '@material-ui/core/Button';
-import {
-  FaUserAlt, FaShoppingCart, FaSearch, FaHeart
-} from 'react-icons/fa';
+import IconButton from '@material-ui/core/IconButton';
+import { MdMenu } from 'react-icons/md';
 import { PRODUCTS_ROUTE_PATH } from '../../../routes/Products/Products';
 import logo from '../../../data/images/logo.png';
+import Menu from '../../../containers/App/Menu';
 
 const Header = ({
-  openCart,
+  openMenu,
   classes
 }) => (
   <header>
@@ -22,41 +20,17 @@ const Header = ({
       color="inherit"
     >
       <Toolbar className={classes.toolbar}>
+        <IconButton className={classes.habmurgerButton} onClick={openMenu}>
+          <MdMenu size={32} />
+        </IconButton>
         <Link
           to={PRODUCTS_ROUTE_PATH}
           className={classes.logo}
         >
           <img className={classes.logoImg} src={logo} alt="spark-app" />
         </Link>
-        <div className={classes.actionButtons}>
-          <NavLink exact to="/login" className={classes.navLink} activeClassName={classes.navLinkActive}>
-            <Button disableRipple className={classes.actionButton}>
-              <FaUserAlt size={30} className={classes.navLinkIcon} />
-              <Typography variant="caption" className={classes.navLinkCaption}>
-                {'Login'}
-              </Typography>
-            </Button>
-          </NavLink>
-          <NavLink exact to="/wish-list" className={classes.navLink} activeClassName={classes.navLinkActive}>
-            <Button disableRipple className={classes.actionButton}>
-              <FaHeart size={30} className={classes.navLinkIcon} />
-              <Typography variant="caption" className={classes.navLinkCaption}>
-                {'Wish List'}
-              </Typography>
-            </Button>
-          </NavLink>
-          <Button disableRipple className={classes.actionButton} onClick={openCart}>
-            <FaShoppingCart size={30} className={classes.navLinkIcon} />
-            <Typography variant="caption" className={classes.navLinkCaption}>
-              {'Cart'}
-            </Typography>
-          </Button>
-          <Button disableRipple className={classes.actionButton} onClick={() => console.log('show search component')}>
-            <FaSearch size={30} className={classes.navLinkIcon} />
-            <Typography variant="caption" className={classes.navLinkCaption}>
-              {'Search'}
-            </Typography>
-          </Button>
+        <div className={classes.menu}>
+          <Menu />
         </div>
       </Toolbar>
     </AppBar>
@@ -64,14 +38,10 @@ const Header = ({
 );
 
 Header.propTypes = {
-  openCart: PropTypes.func.isRequired,
   classes: PropTypes.shape({
     appBar: PropTypes.string.isRequired,
     toolbar: PropTypes.string.isRequired,
-    navLink: PropTypes.string.isRequired,
-    navLinkActive: PropTypes.string.isRequired,
-    navLinkIcon: PropTypes.string.isRequired,
-    navLinkCaption: PropTypes.string.isRequired
+    habmurgerButton: PropTypes.string.isRequired,
   }).isRequired
 };
 

@@ -10,42 +10,24 @@ const styles = theme => ({
     paddingBottom: theme.spacing.unit
   },
   toolbar: {
-    justifyContent: 'space-between'
+    justifyContent: 'space-between',
+    [theme.breakpoints.down('sm')]: {
+      justifyContent: 'flex-start',
+    },
   },
-  actionButtons: {
-    display: 'flex',
-    color: theme.palette.grey[500]
+  habmurgerButton: {
+    display: 'none',
+    color: theme.palette.grey[500],
+    marginRight: theme.spacing.unit * 2,
+    [theme.breakpoints.down('sm')]: {
+      display: 'block',
+    },
   },
-  actionButton: {
-    display: 'block',
-    textAlign: 'center',
-    paddingLeft: theme.spacing.unit,
-    paddingRight: theme.spacing.unit,
-    paddingTop: theme.spacing.unit * 2,
-    paddingBottom: theme.spacing.unit * 2,
-    color: 'inherit',
-    transition: '.1s linear',
-    borderRadius: 0,
-    '&:hover': {
-      color: theme.palette.turquoise,
-      backgroundColor: 'inherit'
-    }
+  menu: {
+    [theme.breakpoints.down('sm')]: {
+      display: 'none',
+    },
   },
-  navLink: {
-    textDecoration: 'none',
-    color: 'inherit'
-  },
-  navLinkCaption: {
-    textAlign: 'center',
-    color: 'inherit',
-    textTransform: 'none'
-  },
-  navLinkIcon: {
-    color: 'inherit'
-  },
-  navLinkActive: {
-    color: theme.palette.turquoise
-  }
 });
 
 export default styles;

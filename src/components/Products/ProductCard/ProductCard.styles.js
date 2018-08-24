@@ -50,6 +50,13 @@ const styles = theme => ({
   },
   hoveredImage: {
     transform: 'scale(1.05)'
+  },
+  addToCart: {
+    marginTop: theme.spacing.unit * 2,
+    color: theme.palette.turquoise,
+    border: `1px solid ${theme.palette.turquoise}`,
+    boxShadow: 'none',
+    backgroundColor: 'inherit'
   }
 });
 
