@@ -65,6 +65,7 @@ const FiltersItem = ({
 );
 
 FiltersItem.propTypes = {
+  id: PropTypes.string.isRequired,
   elements: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedElements: PropTypes.arrayOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,

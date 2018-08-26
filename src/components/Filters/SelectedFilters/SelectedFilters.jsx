@@ -15,7 +15,7 @@ const SelectedFilters = ({
         return null;
       }
       return (
-        <div key={key} className={classes.filters}>
+        <div key={key} id={key} className={classes.filters}>
           <Typography>{`${capitalizeFirstLetter(key)}:`}</Typography>
           {values.map(value => (
             <Chip
