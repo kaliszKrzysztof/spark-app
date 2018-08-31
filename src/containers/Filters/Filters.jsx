@@ -8,9 +8,15 @@ import size from 'lodash/size';
 import Filters from '../../components/Filters';
 import styles from '../../components/Filters/Filters.styles';
 import { AVAILABLE_FILTERS_KEY } from '../../reducers/filters';
-import { toggleFilter } from '../../actions/filters';
+import { toggleFilter, clearFilters } from '../../actions/filters';
 
 class FiltersContainer extends React.Component {
+  componentWillUnmount() {
+    const { clearFilters } = this.props;
+    clearFilters(AVAILABLE_FILTERS_KEY);
+  }
+
+
   handleChangeFilter = (id, element, selected) => {
     const {
       toggleFilter, history, location: { pathname }
@@ -51,7 +57,8 @@ const mapStateToProps = ({ filtersReducer }) => ({
 });
 
 const mapDispatchToProps = dispatch => bindActionCreators({
-  toggleFilter
+  toggleFilter,
+  clearFilters
 }, dispatch);
 
 export default withStyles(styles)(

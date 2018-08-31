@@ -10,10 +10,10 @@ const Products = ({
   products, isFetching, classes
 }) => (
   <Grid container spacing={24}>
-    {isFetching && <Overlay size={50} positionAbsolute={!!(products.length)} />}
     <Grid item xs={12}>
       <Filters />
     </Grid>
+    {isFetching && <Overlay size={50} positionAbsolute={!!(products.length)} />}
     {products.length === 0 && !isFetching
       ? <Typography className={classes.emptyList} variant="headline">Products list is empty</Typography>
       : products.map(product => (

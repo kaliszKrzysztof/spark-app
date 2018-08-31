@@ -61,17 +61,15 @@ const productsReducer = (state = defaultState, { type, payload }) => {
     case SET_ACTIVE_FILTERS:
       return {
         ...state,
-        [SELECTED_FILTERS_KEY]: payload,
-        // [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.API
+        [SELECTED_FILTERS_KEY]: {
+          ...state[SELECTED_FILTERS_KEY],
+          ...payload
+        },
+        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.API
       };
     case CLEAR_FILTERS:
       return {
-        ...state,
-        [SELECTED_FILTERS_KEY]: {
-          ...state[SELECTED_FILTERS_KEY],
-          [payload.key]: []
-        },
-        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.USER
+        ...defaultState
       };
     default:
       return state;

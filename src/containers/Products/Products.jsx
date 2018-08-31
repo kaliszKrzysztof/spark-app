@@ -6,7 +6,7 @@ import qs from 'qs';
 import { withStyles } from '@material-ui/core/styles';
 import Products from '../../components/Products';
 import styles from '../../components/Products/Products.styles';
-import { startFetchProducts } from '../../actions/products';
+import { startFetchProducts, clearProducts } from '../../actions/products';
 import { generateFilterFromProducts, setActiveFilters } from '../../actions/filters';
 import { PRODUCTS_FETCHING_KEY, PRODUCTS_ERROR_KEY, PRODUCTS_KEY } from '../../reducers/products';
 import { SELECTED_FILTERS_KEY, LAST_ACTION_SOURCE_KEY, FILTER_ACTION_SOURCE } from '../../reducers/filters';
@@ -18,11 +18,9 @@ class ProductsContainer extends React.Component {
       startFetchProducts, generateFilterFromProducts, setActiveFilters, history
     } = this.props;
     const filters = qs.parse(history.location.search, { ignoreQueryPrefix: true });
-    if (filters) {
-      setActiveFilters(filters);
-    }
     startFetchProducts(2000, filters).then((products) => {
       generateFilterFromProducts(products);
+      setActiveFilters(filters);
     });
   }
 
@@ -31,6 +29,11 @@ class ProductsContainer extends React.Component {
     if (prevProps.selectedFilters !== selectedFilters && lastAction === FILTER_ACTION_SOURCE.USER) {
       startFetchProducts(2000, selectedFilters);
     }
+  }
+
+  componentWillUnmount() {
+    const { clearProducts } = this.props;
+    clearProducts();
   }
 
   render() {
@@ -54,7 +57,8 @@ class ProductsContainer extends React.Component {
 const mapDispatchToProps = dispatch => bindActionCreators({
   startFetchProducts,
   generateFilterFromProducts,
-  setActiveFilters
+  setActiveFilters,
+  clearProducts
 }, dispatch);
 
 const mapStateToProps = ({ productsReducer, filtersReducer }) => ({

@@ -22,7 +22,6 @@ class ProductImageContainer extends React.Component {
   handleLoad = () => {
     const { timeout, src } = this.props;
     const { isLoaded } = this.state;
-    console.log('From handleLoad:', isLoaded);
     if (!isLoaded) {
       setTimeout(() => {
         this.setState(prevState => ({
