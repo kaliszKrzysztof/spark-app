@@ -9,7 +9,7 @@ const selectedElementsProps = {
     shape: [],
     colors: []
   },
-  toggleFilter: () => null,
+  onChangeFilter: () => null,
   classes: {
     paper: 'paper',
     filters: 'filters',
@@ -34,14 +34,20 @@ describe('SelectedFilters component', () => {
     expect(displayedFilters.length).toEqual(1);
     expect(displayedFilters.find(Chip).length).toEqual(selectedElements.length);
   });
-  it('should call toggleFilter when chip delete icon is clicked', () => {
+  it('should call onChangeFilter when chip delete icon is clicked', () => {
     const filterKey = 'shape';
     const selectedElements = ['1', '2', '3'];
-    const toggleFilter = sinon.spy();
-    wrapper = mount(<SelectedFilters {...selectedElementsProps} toggleFilter={toggleFilter} selectedElements={{ [filterKey]: selectedElements }} />);
+    const onChangeFilter = sinon.spy();
+    wrapper = mount(
+      <SelectedFilters
+        {...selectedElementsProps}
+        onChangeFilter={onChangeFilter}
+        selectedElements={{ [filterKey]: selectedElements }}
+      />
+    );
     const chip = wrapper.find(`#${filterKey}`).find(Chip).first();
     const deleteIcon = chip.find('SvgIcon');
     deleteIcon.simulate('click');
-    expect(toggleFilter.calledOnceWith(filterKey, selectedElements[0], false)).toEqual(true);
+    expect(onChangeFilter.called).toEqual(true);
   });
 });

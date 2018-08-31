@@ -11,7 +11,7 @@ import { AVAILABLE_FILTERS_KEY } from '../../reducers/filters';
 import { toggleFilter } from '../../actions/filters';
 
 class FiltersContainer extends React.Component {
-  handleChangeFilter = (id, element, selected) => () => {
+  handleChangeFilter = (id, element, selected) => {
     const {
       toggleFilter, history, location: { pathname }
     } = this.props;

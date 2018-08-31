@@ -9,7 +9,7 @@ const filtersItemProps = {
   elements: [],
   selectedElements: [],
   name: 'name',
-  toggleFilter: () => null,
+  onChangeFilter: () => null,
   classes: {
     button: 'button',
     checkboxRoot: 'checkboxRoot',
@@ -49,20 +49,20 @@ describe('FiltersItem component', () => {
     });
   });
   it('set menu item to checked on click', () => {
-    const toggleFilter = sinon.spy();
+    const onChangeFilter = sinon.spy();
     const elements = ['1', '2', '3'];
-    wrapper = shallow(<FiltersItem {...filtersItemProps} toggleFilter={toggleFilter} elements={elements} />);
+    wrapper = shallow(<FiltersItem {...filtersItemProps} onChangeFilter={onChangeFilter} elements={elements} />);
     const firstMenuItem = wrapper.find(MenuItem).first();
     firstMenuItem.simulate('click');
-    expect(toggleFilter.calledOnceWith(filtersItemProps.id, elements[0], true)).toEqual(true);
+    expect(onChangeFilter.called).toEqual(true);
   });
   it('set checked menu item to unchecked on click', () => {
-    const toggleFilter = sinon.spy();
+    const onChangeFilter = sinon.spy();
     const elements = ['1', '2', '3'];
     const selectedElements = ['1'];
-    wrapper = shallow(<FiltersItem {...filtersItemProps} toggleFilter={toggleFilter} elements={elements} selectedElements={selectedElements} />);
+    wrapper = shallow(<FiltersItem {...filtersItemProps} onChangeFilter={onChangeFilter} elements={elements} selectedElements={selectedElements} />);
     const firstMenuItem = wrapper.find(MenuItem).first();
     firstMenuItem.simulate('click');
-    expect(toggleFilter.calledOnceWith(filtersItemProps.id, elements[0], false)).toEqual(true);
+    expect(onChangeFilter.called).toEqual(true);
   });
 });

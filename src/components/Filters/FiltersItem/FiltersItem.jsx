@@ -51,7 +51,7 @@ const FiltersItem = ({
             dense
             disableGutters
             key={element}
-            onClick={onChangeFilter(id, element, !selected)}
+            onClick={() => onChangeFilter(id, element, !selected)}
           >
             <Checkbox
               checked={selected}

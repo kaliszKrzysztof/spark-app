@@ -22,7 +22,7 @@ const SelectedFilters = ({
               key={value}
               label={capitalizeFirstLetter(value)}
               className={classes.chip}
-              onDelete={onChangeFilter(key, value, false)}
+              onDelete={() => onChangeFilter(key, value, false)}
             />))}
         </div>
       );

@@ -1,7 +1,7 @@
 import React from 'react';
 import { shallow } from 'enzyme';
 import Products from '.';
-import Loader from '../../containers/Loader';
+import Overlay from '../../containers/Overlay';
 import ProductCard from '../../containers/Products/ProductCard';
 
 const productsProps = {
@@ -20,9 +20,9 @@ describe('Products component', () => {
   it('render component properly', () => {
     expect(wrapper.length).toEqual(1);
   });
-  it('render Loader component when isFetching prop is set to true', () => {
+  it('render Overlay component when isFetching prop is set to true', () => {
     wrapper = shallow(<Products {...productsProps} isFetching />);
-    expect(wrapper.find(Loader).length).toEqual(1);
+    expect(wrapper.find(Overlay).length).toEqual(1);
   });
   it('render empty list message when product list is empty', () => {
     wrapper = shallow(<Products {...productsProps} />);

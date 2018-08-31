@@ -1,4 +1,7 @@
 const styles = theme => ({
+  root: {
+    position: 'relative'
+  },
   emptyList: {
     color: theme.palette.turquoise,
     marginTop: theme.spacing.unit,

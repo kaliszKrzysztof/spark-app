@@ -1,0 +1,22 @@
+export const colors = {
+  'rubberized navy': '#000080',
+  black: '#000000',
+  brown: '#8B4513',
+  silver: '#C0C0C0',
+  'light brown': '#CD853F',
+  'dark green': '#006400',
+  crystal: '#B8860B',
+  'matte red': '#B22222',
+  scarlet: '#8B0000',
+  blue: '#4682B4',
+  grey: '#808080',
+  'light green': '#00FF00',
+  'shiny beige': '#F5DEB3',
+  'dark blue': '#483D8B',
+  'mate black': '#696969',
+  khaki: '#BDB76B',
+  white: '#FFFFFF',
+  'shiny black': '#696969',
+  'mate green': '#2E8B57',
+  purple: '#663399'
+};

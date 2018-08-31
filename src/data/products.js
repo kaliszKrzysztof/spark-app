@@ -93,11 +93,11 @@ const data = [
     id: '4',
     brand_name: 'Timberland',
     shape: 'Rectangle',
-    colors: ['crystal', 'matte red', 'black', 'scarlet'],
+    colors: ['white', 'matte red', 'black', 'scarlet'],
     variants: [{
       id: '4-1',
-      name: ' Sunglasses - crystal',
-      color: 'crystal',
+      name: ' Sunglasses - white',
+      color: 'white',
       img: 'https://i.imgur.com/EJ9go0W.jpg',
       price: '75,00',
     }, {

@@ -37,19 +37,15 @@ const styles = theme => ({
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'center',
+    boxShadow: theme.shadows[2]
   },
   hidden: {
     visibility: 'hidden'
   },
-  inactiveIcon: {
-    boxShadow: 'none'
-  },
-  image: {
-    maxWidth: '100%',
-    transition: 'transform .3s linear',
-  },
-  hoveredImage: {
-    transform: 'scale(1.05)'
+  activeIcon: {
+    boxShadow: `0px 2px 4px -1px rgba(184, 134, 11, 0.5),
+    0px 4px 5px 0px rgba(184, 134, 11, 0.5),
+    0px 1px 10px 0px rgba(184, 134, 11, 0.5)`
   },
   addToCart: {
     marginTop: theme.spacing.unit * 2,

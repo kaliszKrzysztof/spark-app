@@ -4,7 +4,10 @@ import Filters from '.';
 import FiltersItemContainer from '../../containers/Filters/FiltersItem';
 
 const filtersProps = {
-  availableFilters: {},
+  availableFilters: {
+    colors: [],
+    shape: []
+  },
   classes: {
     root: 'root',
     paper: 'button'
@@ -20,6 +23,7 @@ describe('Filters component', () => {
     expect(wrapper.length).toEqual(1);
   });
   it('render 0 filters item when passed 0', () => {
+    wrapper = shallow(<Filters {...filtersProps} availableFilters={{}} />);
     expect(wrapper.find(FiltersItemContainer).length).toEqual(0);
   });
   it('render 2 filters item when passed 2', () => {
