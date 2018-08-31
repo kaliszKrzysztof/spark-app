@@ -2,15 +2,22 @@ import {
   GENERATE_FILTERS_FROM_PRODUCTS,
   ADD_FILTER,
   REMOVE_FILTER,
-  CLEAR_FILTERS
+  CLEAR_FILTERS,
+  SET_ACTIVE_FILTERS
 } from '../actions/filters';
 
 export const AVAILABLE_FILTERS_KEY = 'availableFilters';
 export const SELECTED_FILTERS_KEY = 'selectedFilters';
+export const LAST_ACTION_SOURCE_KEY = 'lastActionSource';
+export const FILTER_ACTION_SOURCE = {
+  USER: 'USER',
+  API: 'API'
+};
 
 const defaultState = {
   [AVAILABLE_FILTERS_KEY]: {},
-  [SELECTED_FILTERS_KEY]: {}
+  [SELECTED_FILTERS_KEY]: {},
+  [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.API
 };
 
 const productsReducer = (state = defaultState, { type, payload }) => {
@@ -19,7 +26,11 @@ const productsReducer = (state = defaultState, { type, payload }) => {
       return {
         ...state,
         [AVAILABLE_FILTERS_KEY]: payload.availableFilters,
-        [SELECTED_FILTERS_KEY]: payload.selectedFilters,
+        [SELECTED_FILTERS_KEY]: {
+          ...payload.selectedFilters,
+          ...state[SELECTED_FILTERS_KEY],
+        },
+        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.API
       };
     case ADD_FILTER:
       return {
@@ -30,7 +41,8 @@ const productsReducer = (state = defaultState, { type, payload }) => {
             ...state[SELECTED_FILTERS_KEY][payload.key],
             payload.filter
           ]
-        }
+        },
+        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.USER
       };
     case REMOVE_FILTER:
       const filters = state[SELECTED_FILTERS_KEY][payload.key];
@@ -43,7 +55,14 @@ const productsReducer = (state = defaultState, { type, payload }) => {
         [SELECTED_FILTERS_KEY]: {
           ...state[SELECTED_FILTERS_KEY],
           [payload.key]: [...filters]
-        }
+        },
+        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.USER
+      };
+    case SET_ACTIVE_FILTERS:
+      return {
+        ...state,
+        [SELECTED_FILTERS_KEY]: payload,
+        // [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.API
       };
     case CLEAR_FILTERS:
       return {
@@ -51,7 +70,8 @@ const productsReducer = (state = defaultState, { type, payload }) => {
         [SELECTED_FILTERS_KEY]: {
           ...state[SELECTED_FILTERS_KEY],
           [payload.key]: []
-        }
+        },
+        [LAST_ACTION_SOURCE_KEY]: FILTER_ACTION_SOURCE.USER
       };
     default:
       return state;

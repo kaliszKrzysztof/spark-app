@@ -4,6 +4,7 @@ const styles = theme => ({
     boxShadow: 'none',
     backgroundColor: theme.palette.grey[100]
   },
+  logo: {},
   logoImg: {
     maxWidth: 100,
     paddingTop: theme.spacing.unit,

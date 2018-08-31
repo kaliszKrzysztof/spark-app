@@ -13,7 +13,7 @@ const FiltersItem = ({
   selectedElements,
   anchorEl,
   classes,
-  toggleFilter,
+  onChangeFilter,
   onMenuOpen,
   onMenuClose
 }) => (
@@ -47,7 +47,12 @@ const FiltersItem = ({
       {elements.map((element) => {
         const selected = selectedElements.indexOf(element) > -1;
         return (
-          <MenuItem dense disableGutters key={element} onClick={() => toggleFilter(id, element, !selected)}>
+          <MenuItem
+            dense
+            disableGutters
+            key={element}
+            onClick={onChangeFilter(id, element, !selected)}
+          >
             <Checkbox
               checked={selected}
               tabIndex={-1}
@@ -69,7 +74,7 @@ FiltersItem.propTypes = {
   elements: PropTypes.arrayOf(PropTypes.string).isRequired,
   selectedElements: PropTypes.arrayOf(PropTypes.string).isRequired,
   name: PropTypes.string.isRequired,
-  toggleFilter: PropTypes.func.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
   classes: PropTypes.shape({
     button: PropTypes.string.isRequired,
     checkboxRoot: PropTypes.string.isRequired,

@@ -1,7 +1,8 @@
 import {
   PRODUCTS_FETCH_REQUEST,
   PRODUCTS_FETCH_SUCCESS,
-  PRODUCTS_FETCH_ERROR
+  PRODUCTS_FETCH_ERROR,
+  CLEAR_PRODUCTS
 } from '../actions/products';
 
 export const PRODUCTS_KEY = 'products';
@@ -32,6 +33,10 @@ const productsReducer = (state = defaultState, { type, payload, error }) => {
         ...state,
         [PRODUCTS_ERROR_KEY]: error,
         [PRODUCTS_FETCHING_KEY]: false
+      };
+    case CLEAR_PRODUCTS:
+      return {
+        ...defaultState
       };
     default:
       return state;

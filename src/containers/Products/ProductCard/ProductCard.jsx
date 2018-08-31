@@ -5,27 +5,22 @@ import ProductCard from '../../../components/Products/ProductCard';
 import styles from '../../../components/Products/ProductCard/ProductCard.styles';
 import { SELECTED_FILTERS_KEY } from '../../../reducers/filters';
 
+const setActiveVariant = (variants, colors) => {
+  if (colors && colors.length) {
+    const intersection = variants.filter(({ color }) => colors.includes(color));
+    return intersection[intersection.length - 1] || variants[0];
+  }
+  return variants[0];
+};
+
 class ProductCardContainer extends React.Component {
   constructor(props) {
     super(props);
-    const { variants } = this.props;
+    const { variants, selectedFilters: { colors } } = this.props;
     this.state = {
       isHovered: false,
-      activeVariant: variants[0]
+      activeVariant: setActiveVariant(variants, colors)
     };
-  }
-
-  static getDerivedStateFromProps(props, state) {
-    const { prevColors } = state;
-    const { variants, selectedFilters: { colors } } = props;
-    if (colors && colors.length > 0 && colors !== prevColors) {
-      const intersection = variants.filter(({ color }) => colors.includes(color));
-      return {
-        activeVariant: intersection[intersection.length - 1],
-        prevColors: colors
-      };
-    }
-    return null;
   }
 
   handleMouseEnter = state => () => {

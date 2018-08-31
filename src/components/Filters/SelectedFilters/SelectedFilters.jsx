@@ -7,7 +7,7 @@ import map from 'lodash/map';
 import { capitalizeFirstLetter } from '../../../services/helpers';
 
 const SelectedFilters = ({
-  selectedElements, toggleFilter, classes
+  selectedElements, onChangeFilter, classes
 }) => (
   <Paper className={classes.paper} elevation={0}>
     {map(selectedElements, (values, key) => {
@@ -22,7 +22,7 @@ const SelectedFilters = ({
               key={value}
               label={capitalizeFirstLetter(value)}
               className={classes.chip}
-              onDelete={() => toggleFilter(key, value, false)}
+              onDelete={onChangeFilter(key, value, false)}
             />))}
         </div>
       );
@@ -32,7 +32,7 @@ const SelectedFilters = ({
 
 SelectedFilters.propTypes = {
   selectedElements: PropTypes.shape({}).isRequired,
-  toggleFilter: PropTypes.func.isRequired,
+  onChangeFilter: PropTypes.func.isRequired,
   classes: PropTypes.shape({
     paper: PropTypes.string.isRequired,
     filters: PropTypes.string.isRequired,
